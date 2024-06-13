@@ -30,11 +30,15 @@ Program the ESP32 to do what I want
 
 ## The FSR Sensors
 
+![1](sensors-with-cables.png)
+
 So I decided to go with 4 sensors to ensure accurate sensor detection (this would not be necessary but we will get to that later)
 
 2 at "shoulder level" starting at ethier side of the bed
 
 2 at "butt level" starting at ethier side of the bed
+
+![2](fsr-sensors-on-bed-slats.png)
 
 
 Wiring these around the bed felt like it might become an issue so I opted to use a cat6 network cable to connect the sensors as this gave me 4 pairs of cables nicely bundled together.
@@ -43,16 +47,18 @@ Could I have shared the grounds for the sensors on the cat6? almost certainly ye
 
 I investigated and found small rj45 breakout boards with screw terminals which would allow for me to easilly break into the signals along the way. these came in 2 flavours. 1 port for the ends of the chain and 2 connected ports for the middle parts of the chain.
 
+![3](sensor-rj45-breakouts.png)
 
-Sensor 1 - 1 Port - breaking out the cat6 orange pair
 
-Sensor 2 - 2 Port - breaking out the cat6 blue pair
+Sensor 1 - 1 Port - breaking out the cat6 orange pair of the cat6
 
-Sensor 3 - 2 Port - breaking out the cat6 green pair
+Sensor 2 - 2 Port - breaking out the cat6 blue pair of the cat6
 
-Sensor 4 - 2 Port - breaking out the cat6 brown pair
+Sensor 3 - 2 Port - breaking out the cat6 green pair of the cat6
 
-Controller - 1 port - connecting the pairs to the pcb
+Sensor 4 - 2 Port - breaking out the cat6 brown pair of the cat6
+
+Controller - 1 port - connecting the pairs to the pcb of the cat6
 
 My plan was to measure the resistance of each sensor with the bed empty and again when "occupied" to calculate the best pull up resistor value to use. however this proved unsucsessful as measuring the resistance over this distance was unreliable with my (admittedly cheap) multimeter. My next plan was to build a quick voltage devider resistance sensor circuit using the esp32 on breadboard but this also proved unreliable. So i opted for trial and error going through my resistor box until I saw it working. after a few attempts I settled on 5.6k which although maybe didnt give me the best range it was definetly accurate enough to detect yes/no in software.
 
@@ -74,6 +80,8 @@ on the stripboard I then attached 2 dip headers to put my prepinned esp32 dev bo
 
 not the most complicated circuit in the word but it was fairly easy for someone who hasnt touched a soldering iron in years
 
+![4](complete-pcb.png)
+
 ## The controller Box
 
 A cheap project box with some holes drilled for the cables to come out and a short USB-C extention for power was the layout I went with.
@@ -81,6 +89,10 @@ A cheap project box with some holes drilled for the cables to come out and a sho
 one of the RJ45 breakout boards mounted with cable ties through its mounting holes and just some wagos cable tie based down was my basic connection handlers
 
 I should probably label the rj45 "NOT Ethernet" at some point but in its current form it seems obvious that its probably not a good idea to plug it into a switch...
+
+![5](incomplete-pcb-in-box.png)
+
+![6](finished-box.png)
 
 ## The ESPHome Code
 
@@ -107,7 +119,7 @@ Full (badly written) code available [HERE](esphome-web-f34bb0.yaml)
 
 ## Home Assistant integration
 
-Thanks to writing and programming esphome from wtithin HA, this was basically automagically done for me and all i had left to do was to OR it with my mmWave sensor on my everything presence one which was achieved with this template:
+Thanks to writing and programming esphome from within HA, this was basically automagically done for me and all i had left to do was to OR it with my mmWave sensor on my everything presence one which was achieved with this template:
 
 ````
 {{ is_state('binary_sensor.everything_presence_one_6db848_occupancy', 'on') 
@@ -131,6 +143,8 @@ The output is very reliable and I would have no issue using it in automationss
 4 sensors is overkill for this size of bed... I would probably be fine but would probably go for 2 (1 at top and 1 at middle of bed)
 
 During an extended "test session" of the sensors lasting just under 9.5 hours the only 1 of the sensors went into a "false negitive" state which was for only 2 seconds. so any of the sensors with a delayed off would have been reliable for the entire test session. and as such the main combined sensor with the delayed off was reliable.
+
+![7](test-session.png)
 
 A smaller box to house the controller in... it is a bit big but its only under the bed so its not a major issue.
 
