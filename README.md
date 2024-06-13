@@ -120,6 +120,8 @@ Full (badly written) code available [HERE](esphome-web-f34bb0.yaml)
 
 ## Home Assistant integration
 
+![7](ha-entities.png)
+
 Thanks to writing and programming esphome from within HA, this was basically automagically done for me and all i had left to do was to OR it with my mmWave sensor on my everything presence one which was achieved with this template:
 
 ````
@@ -137,7 +139,7 @@ This was a great project that let me learn the basics of esp32 circuit construct
 
 Using cat6 cables keeps it pretty neat and them being standard network cabels means that they are easily interchangleable if things get mixed up during a move etc...
 
-The output is very reliable and I would have no issue using it in automationss
+The output is very reliable and I would have no issue using it in automations
 
 ## What should i have done differntly?
 
@@ -145,7 +147,7 @@ The output is very reliable and I would have no issue using it in automationss
 
 During an extended "test session" of the sensors lasting just under 9.5 hours the only 1 of the sensors went into a "false negitive" state which was for only 2 seconds. so any of the sensors with a delayed off would have been reliable for the entire test session. and as such the main combined sensor with the delayed off was reliable.
 
-![7](test-session.png)
+![8](test-session.png)
 
 A smaller box to house the controller in... it is a bit big but its only under the bed so its not a major issue.
 
