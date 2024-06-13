@@ -80,6 +80,8 @@ A cheap project box with some holes drilled for the cables to come out and a sho
 
 one of the RJ45 breakout boards mounted with cable ties through its mounting holes and just some wagos cable tie based down was my basic connection handlers
 
+I should probably label the rj45 "NOT Ethernet" at some point but in its current form it seems obvious that its probably not a good idea to plug it into a switch...
+
 ## The ESPHome Code
 
 I was plesently supprised how easy this was to write and soon had it running as intended and used the following sensors:
@@ -136,6 +138,10 @@ I would look to me make a custom PCB which houses all the components in a smalle
 
 I Probably would add a 2nd 3.5mm jack for a 2nd tempreture sensor to expand its connectivity
 
+Or I could share the grounds and integrate the tempreture probe into the cat6 chain
+
 There is also a chance i think of something else between now and a v2 becoming a reality that I think would be good to use to make the bed "smarter"
 
 This would them probably be housed inside a custom box probably 3d printed
+
+Something smaller would be easy to mount directly to the bed frame to keep it out the way
