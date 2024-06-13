@@ -124,6 +124,8 @@ This was a great project that let me learn the basics of esp32 circuit construct
 
 Using cat6 cables keeps it pretty neat and them being standard network cabels means that they are easily interchangleable if things get mixed up during a move etc...
 
+The output is very reliable and I would have no issue using it in automationss
+
 ## What should i have done differntly?
 
 4 sensors is overkill for this size of bed... I would probably be fine but would probably go for 2 (1 at top and 1 at middle of bed)
