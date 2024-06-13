@@ -1,4 +1,7 @@
 # MK-SmartBed
+
+WRITEUP IS A WORK IN PROGRESS
+
 This Project was mostly a learning exercise for myself to learn about creating a custom sensor control using an esp32.
 
 I decided write this up in case this helps or inspires someone else to do the same or a simalar project.
@@ -78,4 +81,24 @@ A cheap project box with some holes drilled for the cables to come out and a sho
 one of the RJ45 breakout boards mounted with cable ties through its mounting holes and just some wagos cable tie based down was my basic connection handlers
 
 ## The ESPHome Code
+
+I was plesently supprised how easy this was to write and soon had it running as intended and used the following sensors:
+
+Tempreture - using the dallas tempreture sensor component
+
+Bed Trigger Level - adjustable number that would let me move adjust the sensitivity as required
+
+Bed_sensor_1/2/3/4 - For reading the voltage on the pin through the SR sensors
+
+Bed Sensor 1/2/3/4 occupied - binary sensor showing showing if sensor voltage is above/below the trigger level
+
+Top of Bed Occupied - binary sensor that is an OR of sensors 1 and 2 being occupied
+
+Middle of Bed occupied - binary sensor that is an OR of sensors 3 and 4 being occupied
+
+Bed Occupied - Binary sensor that is an OR of all 4 sensors which has a delayed on of 5 seconds and a delayed off of 30 seconds
+
+
+in normal operation I expect to use only the "Bed Occupied" and the "Tempreture" sensors and there is definetly more efficient ways to write this setup however this was straight forward and left me room for fault finding/ debbugging if/when needed
+
 
