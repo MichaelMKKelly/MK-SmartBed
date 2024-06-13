@@ -104,7 +104,6 @@ Bed Occupied - Binary sensor that is an OR of all 4 sensors which has a delayed 
 In normal operation I expect to use only the "Bed Occupied" and the "Tempreture" sensors and there is definetly more efficient ways to write this setup however this was straight forward and left me room for fault finding/ debbugging if/when needed
 
 Full (badly written) code available [HERE](esphome-web-f34bb0.yaml)
-esphome-web-f34bb0.yaml
 
 ## Home Assistant integration
 
