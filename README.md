@@ -99,6 +99,43 @@ Middle of Bed occupied - binary sensor that is an OR of sensors 3 and 4 being oc
 Bed Occupied - Binary sensor that is an OR of all 4 sensors which has a delayed on of 5 seconds and a delayed off of 30 seconds
 
 
-in normal operation I expect to use only the "Bed Occupied" and the "Tempreture" sensors and there is definetly more efficient ways to write this setup however this was straight forward and left me room for fault finding/ debbugging if/when needed
+In normal operation I expect to use only the "Bed Occupied" and the "Tempreture" sensors and there is definetly more efficient ways to write this setup however this was straight forward and left me room for fault finding/ debbugging if/when needed
 
+## Home Assistant integration
 
+Thanks to writing and programming esphome from wtithin HA, this was basically automagically done for me and all i had left to do was to OR it with my mmWave sensor on my everything presence one which was achieved with this template:
+
+````
+{{ is_state('binary_sensor.everything_presence_one_6db848_occupancy', 'on') 
+            or
+            is_state('binary_sensor.esphome_web_f34bb0_bed_occupied', 'on') 
+            }}
+````
+
+this then provided me a combined room presence sensor
+
+## Conclusion
+
+This was a great project that let me learn the basics of esp32 circuit construction and esphome and gave me confidence with using them in future projects to make "dumb" devices "smart" which might be more complicated projects so it is nice to learn the basics in a nice easy project.
+
+Using cat6 cables keeps it pretty neat and them being standard network cabels means that they are easily interchangleable if things get mixed up during a move etc...
+
+## What should i have done differntly?
+
+4 sensors is overkill for this size of bed... I would probably be fine but would probably go for 2 (1 at top and 1 at middle of bed)
+
+During an extended "test session" of the sensors lasting just under 9.5 hours the only 1 of the sensors went into a "false negitive" state which was for only 2 seconds. so any of the sensors with a delayed off would have been reliable for the entire test session. and as such the main combined sensor with the delayed off was reliable.
+
+A smaller box to house the controller in... it is a bit big but its only under the bed so its not a major issue.
+
+## will there be a v2 and what will change?
+
+I am pretty happy with how the FSR sensors are set up (although there are too many of them) however the controler would be reworked
+
+I would look to me make a custom PCB which houses all the components in a smaller footprint with a RJ45 port directly on it for the FSR sensors and also probably a 3.5mm jack which would be a better way to attach the tempreture sensor.
+
+I Probably would add a 2nd 3.5mm jack for a 2nd tempreture sensor to expand its connectivity
+
+There is also a chance i think of something else between now and a v2 becoming a reality that I think would be good to use to make the bed "smarter"
+
+This would them probably be housed inside a custom box probably 3d printed
