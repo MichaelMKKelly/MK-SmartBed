@@ -76,6 +76,7 @@ this cable along with the cat6 from the FSR sensors would then be attached to th
 on the stripboard I then attached 2 dip headers to put my prepinned esp32 dev board onto and attached a number of short cables to attach to my sensors. along with 5 resistors:
 
 4 x 5.6k resistors as pull up resistors on the FSR sensors
+
 1 x 4.7k resistor as pull up resistor on the tempreture sensor data line
 
 not the most complicated circuit in the word but it was fairly easy for someone who hasnt touched a soldering iron in years
