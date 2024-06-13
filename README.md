@@ -103,6 +103,9 @@ Bed Occupied - Binary sensor that is an OR of all 4 sensors which has a delayed 
 
 In normal operation I expect to use only the "Bed Occupied" and the "Tempreture" sensors and there is definetly more efficient ways to write this setup however this was straight forward and left me room for fault finding/ debbugging if/when needed
 
+Full (badly written) code available [HERE](esphome-web-f34bb0.yaml)
+esphome-web-f34bb0.yaml
+
 ## Home Assistant integration
 
 Thanks to writing and programming esphome from wtithin HA, this was basically automagically done for me and all i had left to do was to OR it with my mmWave sensor on my everything presence one which was achieved with this template:
