@@ -153,7 +153,7 @@ During an extended "test session" of the sensors lasting just under 9.5 hours th
 
 A smaller box to house the controller in... it is a bit big but its only under the bed so its not a major issue.
 
-## will there be a v2 and what will change?
+## Will there be a v2 and what will change?
 
 I am pretty happy with how the FSR sensors are set up (although there are too many of them) however the controler would be reworked
 
