@@ -141,9 +141,9 @@ Using cat6 cables keeps it pretty neat and them being standard network cabels me
 
 The output is very reliable and I would have no issue using it in automations
 
-## What should i have done differently?
+## What should I have done differently?
 
-4 sensors is overkill for this size of bed... I would probably be fine but would probably go for 2 (1 at top and 1 at middle of bed)
+4 sensors is overkill for this size of bed... 1 would probably be fine but would probably go for 2 (1 at top and 1 at middle of bed)
 
 During an extended "test session" of the sensors lasting just under 9.5 hours the only 1 of the sensors went into a "false negitive" state which was for only 2 seconds. so any of the sensors with a delayed off would have been reliable for the entire test session. and as such the main combined sensor with the delayed off was reliable.
 
