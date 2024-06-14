@@ -113,6 +113,8 @@ Middle of Bed occupied - binary sensor that is an OR of sensors 3 and 4 being oc
 
 Bed Occupied - Binary sensor that is an OR of all 4 sensors which has a delayed on of 5 seconds and a delayed off of 30 seconds
 
+![7](sensor-output.png)
+
 
 In normal operation I expect to use only the "Bed Occupied" and the "Tempreture" sensors and there is definetly more efficient ways to write this setup however this was straight forward and left me room for fault finding/ debbugging if/when needed
 
@@ -120,7 +122,7 @@ Full (badly written) code available [HERE](esphome-web-f34bb0.yaml)
 
 ## Home Assistant integration
 
-![7](ha-entities.png)
+![8](ha-entities.png)
 
 Thanks to writing and programming esphome from within HA, this was basically automagically done for me and all i had left to do was to OR it with my mmWave sensor on my everything presence one which was achieved with this template:
 
@@ -147,7 +149,7 @@ The output is very reliable and I would have no issue using it in automations
 
 During an extended "test session" of the sensors lasting just under 9.5 hours the only 1 of the sensors went into a "false negitive" state which was for only 2 seconds. so any of the sensors with a delayed off would have been reliable for the entire test session. and as such the main combined sensor with the delayed off was reliable.
 
-![8](test-session.png)
+![9](test-session.png)
 
 A smaller box to house the controller in... it is a bit big but its only under the bed so its not a major issue.
 
