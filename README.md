@@ -168,3 +168,9 @@ There is also a chance i think of something else between now and a v2 becoming a
 This would them probably be housed inside a custom box probably 3d printed
 
 Something smaller would be easy to mount directly to the bed frame to keep it out the way
+
+## Credits and additional reading
+
+Write up on FSR Sensors by tom_l - https://community.home-assistant.io/t/fsr-the-best-bed-occupancy-sensor/365795
+
+ESPHome Dallas Temperature Sensor Documentation = https://esphome.io/components/sensor/dallas.html
