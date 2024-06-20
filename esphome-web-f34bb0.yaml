@@ -23,6 +23,7 @@ api:
 
 # Allow Over-The-Air updates
 ota:
+  - platform: esphome    
 
 # Allow provisioning Wi-Fi via serial
 improv_serial:
@@ -47,9 +48,9 @@ esp32_improv:
 # To have a "next url" for improv serial
 web_server:
 
-dallas:
-  - pin: GPIO25
-  #- update_interval: 10s
+one_wire:
+  - platform: gpio
+    pin: GPIO25
 
 number:
   - platform: template
@@ -65,9 +66,11 @@ number:
     unit_of_measurement: V 
 
 sensor:
-  - platform: dallas
+  - platform: dallas_temp
     name: "Temperature"
     address: "0xfc499bd446a23528"
+    #update_interval: 10s
+
   - platform: adc
     disabled_by_default: True
     pin: GPIO34
