@@ -98,7 +98,8 @@ I should probably label the rj45 "NOT Ethernet" at some point but in its current
 I was plesently supprised how easy this was to write and soon had it running as intended and used the following sensors:
 
 Tempreture - using the dallas tempreture sensor component
-            Update: as of esphome 2024.6.o uses one_wire+dallas_temp
+
+Update: as of esphome 2024.6.0 uses one_wire & dallas_temp
 
 Bed Trigger Level - adjustable number that would let me move adjust the sensitivity as required
 
