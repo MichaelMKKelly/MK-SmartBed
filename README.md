@@ -98,6 +98,7 @@ I should probably label the rj45 "NOT Ethernet" at some point but in its current
 I was plesently supprised how easy this was to write and soon had it running as intended and used the following sensors:
 
 Tempreture - using the dallas tempreture sensor component
+            Update: as of esphome 2024.6.o uses one_wire+dallas_temp
 
 Bed Trigger Level - adjustable number that would let me move adjust the sensitivity as required
 
@@ -171,4 +172,9 @@ Something smaller would be easy to mount directly to the bed frame to keep it ou
 
 Write up on FSR Sensors by tom_l - https://community.home-assistant.io/t/fsr-the-best-bed-occupancy-sensor/365795
 
-ESPHome Dallas Temperature Sensor Documentation = https://esphome.io/components/sensor/dallas.html
+deprecated: ESPHome Dallas Temperature Sensor Documentation = https://esphome.io/components/sensor/dallas.html
+
+ESPHome one_wire bus Documentation - https://esphome.io/components/one_wire
+
+ESPHome dallas_temp sensor documentation - https://esphome.io/components/sensor/dallas_temp.html
+
