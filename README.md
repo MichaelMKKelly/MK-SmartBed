@@ -2,7 +2,7 @@
 
 This Project was mostly a learning exercise for myself to learn about creating a custom sensor control using an esp32.
 
-I decided write this up in case this helps or inspires someone else to do the same or a simalar project.
+I decided write this up in case this helps or inspires someone else to do the same or a similar project.
 
 ## Project Goal
 
